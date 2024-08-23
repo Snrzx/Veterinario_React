@@ -1,0 +1,17 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+@layer components{
+    .botones{
+        @apply p-3 w-full m-3 rounded-lg uppercase text-white font-bold transition-all shadow-xl
+    }
+    .label{
+        @apply text-gray-500 uppercase font-bold
+    }
+    .campo{
+        @apply w-full py-2 mt-2 placeholder-gray-400 rounded-md px-2 border-gray-300 border mb-2 font-semibold
+    }
+
+}

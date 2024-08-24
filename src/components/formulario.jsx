@@ -74,12 +74,12 @@ function Formulario({pacientes, setPacientes, pacien, setPaciente}){
     }
     return(
         <>
-            <div className="sm:sticky grid top-7 px-4 w-full">
+            <div className="sm:sticky top-7 px-4 w-full grid justify-items-center">
                 <h2 className="font-black text-3xl text-center">Seguimiento de Pacientes</h2>
 
                 <p className="text-lg text-center font-bold p-4">Añade a tus <span className="text-indigo-600">Pacientes</span></p>
 
-                <form className="bg-white shadow-2xl rounded-md p-4 grid max-sm:mb-5" onSubmit={handleSubmit}>
+                <form className="bg-white shadow-2xl rounded-md p-4 grid max-sm:mb-5 sm:w-[16em] md:w-[20em] lg:w-[25em]" onSubmit={handleSubmit}>
                     {error && <Error>todos los campos son obligatorios</Error>}
 
                     <div>

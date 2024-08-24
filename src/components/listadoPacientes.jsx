@@ -3,7 +3,7 @@ import Paciente from "./paciente"
 const Pacientes = ({pacientes, setPaciente, eliminar}) => {
     
     return(
-        <div className="w-full">
+        <div className="grid justify-items-center self-start w-full px-20">
             <h2 className="font-black text-center text-3xl capitalize">listado de pacientes</h2>
             {pacientes && pacientes.length ?
             <>

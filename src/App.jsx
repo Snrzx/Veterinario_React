@@ -36,8 +36,8 @@ function App() {
     <>
       <div className='h-full w-full'>
         <Header/>
-        <div className='sm:flex mt-7'>
-          <div className='sm:w-2/6'>
+        <div className='sm:flex'>
+          <div className='sm:w-2/6 m-5'>
             <Formulario
             pacien={pacien}
             pacientes={pacientes}
@@ -46,7 +46,7 @@ function App() {
             />
           </div>
             
-          <div className='sm:flex sm:w-2/3'>
+          <div className='sm:flex sm:w-2/3 place-content-end mt-5 w-full'>
             <Pacientes es pacientes={pacientes} setPaciente={setPaciente} eliminar={eliminar}/>
           </div>
         </div>

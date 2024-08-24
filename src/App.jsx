@@ -5,33 +5,21 @@ import Pacientes from './components/listadoPacientes'
 
 function App() {
   // Apartado de Variables
-  const [pacientes, setPacientes] = useState([])
+  const [pacientes, setPacientes] = useState(localStorage.getItem('pacientes') ? JSON.parse(localStorage.getItem('pacientes')) : [])
   const [pacien, setPaciente] = useState({})
   
   // Función que se encarga de leer el listado de pacientes de pacientes almacenado.
+  //
   useEffect(() => {
-    try {
-      const storedPacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
-      setPacientes(storedPacientes);
-    } catch (error) {
-      console.error('Error al obtener pacientes del localStorage:', error);
-    }
-  }, []);
-
-  useEffect(() => {
-    // Evita bucles infinitos y actualiza solo cuando hay cambios significativos
-    if (pacientes.length > 0) {
-      localStorage.setItem('pacientes', JSON.stringify(pacientes));
-    }
+    localStorage.setItem('pacientes', JSON.stringify(pacientes) ?? []);
   }, [pacientes]);
 
   // Función que se encarga de borrar un paciente.
   const eliminar = id => {
     const newPacientes=pacientes.filter( pacien=> pacien.id !== id);
-    setPacientes(newPacientes)
+    setPacientes([...newPacientes])
 
   }
-  
   return (
     <>
       <div className='h-full w-full'>
